@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
@@ -7,18 +6,11 @@ import Select from "@material-ui/core/Select";
 
 import { AppContext } from "../contexts/App";
 import useApp from "../contexts/useApp";
-
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 300
-  }
-}));
+import StyledSelectSizeInput from "./StyledSelectSizeInput";
 
 const items = [4, 5, 6, 7, 8, 9, 10];
 
 export default function SelectSizeInput() {
-  const classes = useStyles();
   const [state, setState] = React.useContext(AppContext);
   const { changeMapSize } = useApp();
 
@@ -27,9 +19,10 @@ export default function SelectSizeInput() {
   }
 
   return (
-    <FormControl className={classes.formControl}>
+    <StyledSelectSizeInput>
       <InputLabel htmlFor="select-size">Select Grid Size</InputLabel>
       <Select
+        className="selectWrapper"
         variant="outlined"
         value={state.size}
         onChange={handleChange}
@@ -46,6 +39,6 @@ export default function SelectSizeInput() {
           );
         })}
       </Select>
-    </FormControl>
+    </StyledSelectSizeInput>
   );
 }
