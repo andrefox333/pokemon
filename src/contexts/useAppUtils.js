@@ -1,3 +1,7 @@
+/**
+ * Returns a new grid layout based on size
+ * @param {Number} size
+ */
 export function getNewGrid(size) {
   const gridSize = size * size;
   const grid = [];
@@ -14,6 +18,10 @@ export function getNewGrid(size) {
   return grid;
 }
 
+/**
+ * It resets the grid.
+ * @param {Array} grid
+ */
 export function resetGrid(grid) {
   return grid.map(item => {
     return {

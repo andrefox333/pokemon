@@ -1,5 +1,9 @@
 import axios from "axios";
 
+/**
+ * API call to find paths
+ * @param {Object} data
+ * */
 export async function findPath(data) {
   const config = {
     method: "POST",
