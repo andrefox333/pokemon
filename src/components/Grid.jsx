@@ -15,8 +15,9 @@ export default function Grid() {
 
   return (
     <StyledGrid size={state.size}>
+      <h1>Poke Paths</h1>
       <div className="desc">
-        <h4>Instructions</h4>
+        <h4>Basic Instructions</h4>
         <p>Click on a tile to place an impassable.</p>
         <p>Hover over a tile and press "S" to place the starting location.</p>
         <p>Hover over a tile and press "E" to place the ending location.</p>
